@@ -215,15 +215,17 @@ do
      esac
 done
 
+CURRENT_ISO_DATE=$(date -u +"%Y-%m-%d.%H-%M-%S")
+
 if [ -d "${PMSPARENTPATH}/plexmediaserver-plexpass" ]; then {
         PLEXPASS=1
         PMSLIVEFOLDER="plexmediaserver-plexpass"
-        PMSBAKFOLDER="plexmediaserver-plexpass.bak"
+        PMSBAKFOLDER="plexmediaserver-plexpass.bak.${CURRENT_ISO_DATE}"
         SERVICENAME="plexmediaserver_plexpass"
 } else {
         PLEXPASS=0
         PMSLIVEFOLDER="plexmediaserver"
-        PMSBAKFOLDER="plexmediaserver.bak"
+        PMSBAKFOLDER="plexmediaserver.bak.${CURRENT_ISO_DATE}"
         SERVICENAME="plexmediaserver"
 } fi
 
